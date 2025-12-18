@@ -34,7 +34,7 @@ const navigation = [
   { name: 'Orders', href: '/admin/orders', icon: ShoppingCart },
   { name: 'Customers', href: '/admin/customers', icon: Users },
   { name: 'Banners', href: '/admin/banners', icon: Image },
-  { name: 'Home Section', href: '/admin/homeSection', icon: House },
+ 
   { name: 'Collections', href: '/admin/collections', icon: Tag },
   { name: 'Offers & Coupons', href: '/admin/offers', icon: Tag },
   { name: 'User Management', href: '/admin/user', icon: Tag },

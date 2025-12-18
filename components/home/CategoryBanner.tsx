@@ -122,7 +122,7 @@ export default function CategorySlider({ categories }: CategorySliderProps): Rea
                       </div>
                     )}
 
-                    <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                    <div className="absolute bottom-0 left-0 right-0 p-3 text-white bg-gradient-to-t bg-ring flex justify-between items-center group-hover:pb-5 transition-all duration-300">
                       <h3 className="text-sm font-semibold whitespace-normal truncate">
                         {category.name}
                       </h3>

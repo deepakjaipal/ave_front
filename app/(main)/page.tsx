@@ -8,9 +8,6 @@ import { Collection } from "@/lib/types/collection";
 const ProductSection = lazy(() => import("@/components/home/ProductSection"));
 const CategoryBanner = lazy(() => import("@/components/home/CategoryBanner"));
 const TopCarousel = lazy(() => import("@/components/home/TopCarousel"));
-const FlashDealsBanner = lazy(
-  () => import("@/components/home/FlashDealsBanner")
-);
 
 
 
@@ -45,7 +42,7 @@ export default function HomePageClient() {
   };
 
   /* ================= FETCH CATEGORIES ================= */
-<h1>sdaasdasdasd</h1>
+
   const fetchCategories = async () => {
     try {
       const res = await api.get("/categories");
@@ -67,9 +64,7 @@ export default function HomePageClient() {
       <Suspense fallback={<div className="h-96 animate-pulse bg-gray-100" />}>
         <CategoryBanner categories={categories} />
       </Suspense>
-      <Suspense fallback={<div className="h-64 animate-pulse bg-gray-100" />}>
-        <FlashDealsBanner />
-      </Suspense>
+      
 
       
       {collections.map((collection) => (
