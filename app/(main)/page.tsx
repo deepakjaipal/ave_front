@@ -45,7 +45,7 @@ export default function HomePageClient() {
   };
 
   /* ================= FETCH CATEGORIES ================= */
-
+<h1>sdaasdasdasd</h1>
   const fetchCategories = async () => {
     try {
       const res = await api.get("/categories");
