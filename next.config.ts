@@ -8,9 +8,9 @@ const nextConfig: NextConfig = {
   },
   
   // Skip ESLint during production builds (deployment) to avoid build failures on lint errors
-  // eslint: {
-  //   ignoreDuringBuilds: false,
-  // },
+   eslint: {
+     ignoreDuringBuilds: false,
+   },
   
   // Image optimization
   images: {
