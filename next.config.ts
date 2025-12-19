@@ -3,45 +3,35 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: false,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-dialog'],
+    optimizePackageImports: ["lucide-react", "@radix-ui/react-dialog"],
   },
 
-  
-  // Skip ESLint during production builds (deployment) to avoid build failures on lint errors
-   eslint: {
-     ignoreDuringBuilds: true,
-   },
-  
-  // Image optimization
-
-
-  // ✅ IMPORTANT: Stop ESLint from blocking production builds
+  // ✅ Do not block production build with ESLint
   eslint: {
     ignoreDuringBuilds: true,
   },
 
-  // ✅ IMPORTANT: Stop TypeScript from blocking builds (for `any`)
+  // ✅ Do not block production build with TypeScript errors
   typescript: {
     ignoreBuildErrors: true,
   },
 
-
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'cloudinary.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "cloudinary.com",
+        pathname: "/**",
       },
     ],
   },
@@ -51,12 +41,12 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
-          { key: 'X-Frame-Options', value: 'DENY' },
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
-          { key: 'X-DNS-Prefetch-Control', value: 'on' },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "origin-when-cross-origin" },
+          { key: "X-DNS-Prefetch-Control", value: "on" },
         ],
       },
     ];
@@ -65,8 +55,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/home',
-        destination: '/',
+        source: "/home",
+        destination: "/",
         permanent: true,
       },
     ];
