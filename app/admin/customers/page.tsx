@@ -46,18 +46,19 @@ const getStatusColor = (status: string) => {
 const getAccountTypeBadge = (role?: string) => {
   if (role === 'admin') {
     return (
-      <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
+      <Badge className="bg-red-50 text-red-700 border border-red-200">
         Admin
       </Badge>
     );
   }
 
   return (
-    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+    <Badge className="bg-purple-50 text-purple-700 border border-purple-200">
       User
     </Badge>
   );
 };
+
 
 const formatDate = (dateString: string | null) => {
   if (!dateString) return 'N/A';
@@ -327,9 +328,9 @@ export default function CustomersPage() {
                           )}
                         </div>
                       </td>
-                      <td className="p-4">
-                          {getAccountTypeBadge(customer.role)}
-                      </td>
+                    <td className="p-4">
+  {getAccountTypeBadge(customer.role)}
+</td>
                       <td className="p-4">
                         <div>
                           <p className="font-medium text-sm">-</p>
