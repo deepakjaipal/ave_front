@@ -25,9 +25,9 @@ export default function LoginPage(): React.JSX.Element {
     if (typeof window === 'undefined') return;
 
     const token = localStorage.getItem('adminToken');
-    if (token && pathname === '/auth/login') {
-      router.push('/admin');
-    }
+   if (token) {
+  router.replace('/admin');
+}
   }, [pathname, router]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -49,7 +49,11 @@ export default function LoginPage(): React.JSX.Element {
 
       // SAVE USER + TOKEN
       localStorage.setItem("adminUser", JSON.stringify(authUser));
-      localStorage.setItem("adminToken", response?.token || "yes");
+      if (!response?.token) {
+  throw new Error("Invalid login response");
+}
+
+localStorage.setItem("adminToken", response.token);
 
       toast.success("Login successful!");
 
@@ -61,7 +65,12 @@ export default function LoginPage(): React.JSX.Element {
       }
 
     } catch (error: any) {
-      toast.error(error?.message || 'Login failed');
+     toast.error(
+  error?.response?.data?.message ||
+  error?.message ||
+  'Invalid email or password'
+);
+
     } finally {
       setIsLoading(false);
     }
