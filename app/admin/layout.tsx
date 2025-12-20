@@ -70,11 +70,10 @@ export default function AdminLayout({
 }, [pathname]);
 
  //  Logout
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
-    localStorage.removeItem("adminUser");
-    router.push("/auth/login");
-  };
+   const handleLogout = () => {
+  localStorage.clear(); 
+  router.replace('/auth/login');
+};
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Mobile sidebar backdrop */}
