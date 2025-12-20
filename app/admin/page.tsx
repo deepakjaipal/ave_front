@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useRouter } from 'next/navigation';
+
 import { 
   DollarSign, 
   ShoppingCart, 
@@ -101,17 +101,10 @@ export default function AdminDashboard() {
   const [lowStockProducts, setLowStockProducts] = useState<LowStockProduct[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const router = useRouter();
 
-  useEffect(() => {
-     const token = localStorage.getItem('token');
-
-  if (!token) {
-    router.push('/auth/login');
-    return;
-  }
-    fetchDashboardData();
-  }, []);
+ useEffect(() => {
+  fetchDashboardData();
+}, []);
 
   const fetchDashboardData = async () => {
     try {
