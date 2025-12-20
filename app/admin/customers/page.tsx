@@ -43,14 +43,18 @@ const getStatusColor = (status: string) => {
   }
 };
 
-const getAccountTypeBadge = (type: string) => {
-  return type === 'wholesaler' ? (
+const getAccountTypeBadge = (role?: string) => {
+  if (role === 'admin') {
+    return (
+      <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
+        Admin
+      </Badge>
+    );
+  }
+
+  return (
     <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-      Wholesaler
-    </Badge>
-  ) : (
-    <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
-      Retailer
+      User
     </Badge>
   );
 };
@@ -324,7 +328,7 @@ export default function CustomersPage() {
                         </div>
                       </td>
                       <td className="p-4">
-                        {getAccountTypeBadge(customer.isAdmin ? 'admin' : 'customer')}
+                          {getAccountTypeBadge(customer.role)}
                       </td>
                       <td className="p-4">
                         <div>
