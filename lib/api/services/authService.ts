@@ -20,6 +20,7 @@ export interface User {
   isAdmin: boolean;
   businessName?: string;
   phone?: string;
+  role?: string;
 }
 
 export interface AuthResponse {
