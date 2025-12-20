@@ -37,7 +37,7 @@ const navigation = [
  
   { name: 'Collections', href: '/admin/collections', icon: Tag },
   { name: 'Offers & Coupons', href: '/admin/offers', icon: Tag },
-  { name: 'User Management', href: '/admin/user', icon: Tag },
+ 
   { name: 'Data Import', href: '/admin/import', icon: Upload },
   // { name: 'Reports', href: '/admin/reports', icon: BarChart3 },
   { name: 'Settings', href: '/admin/settings', icon: Settings },
